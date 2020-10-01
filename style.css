@@ -1,0 +1,230 @@
+/*************************
+ * CSS TimeTable by Jules Kreuer (juleskreuer.eu) 
+ * Partly based on Mark Root-Wiley's work (https://css-tricks.com/building-a-conference-schedule-with-css-grid/)
+ *************************/
+ :root {
+    --rowH: 47px;
+    --easeInOutTime: 0.15s;
+  }
+.site-content {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 75vw;
+    line-height: 1.5;
+}
+
+@media screen and (min-width:700px) {
+    /**************************
+    * This is the main grid, each row has the same height
+    * set --rowH to auto to have a condensed version
+    ***************************/
+    .schedule {
+        display: grid;
+        margin-left: -20px;
+        grid-gap: 7px;
+        grid-template-rows:
+            [tracks] 5px
+            [time-0830] var(--rowH)
+            [time-0900] var(--rowH)
+            [time-0930] var(--rowH)
+            [time-1000] var(--rowH)
+            [time-1030] var(--rowH)
+            [time-1100] var(--rowH)
+            [time-1130] var(--rowH)
+            [time-1200] var(--rowH)
+            [time-1230] var(--rowH)
+            [time-1300] var(--rowH)
+            [time-1330] var(--rowH)
+            [time-1400] var(--rowH)
+            [time-1430] var(--rowH)
+            [time-1500] var(--rowH)
+            [time-1530] var(--rowH)
+            [time-1600] var(--rowH)
+            [time-1630] var(--rowH)
+            [time-1700] var(--rowH)
+            [time-1730] var(--rowH)
+            [time-1800] var(--rowH)
+            [time-1830] var(--rowH);
+      
+        grid-template-columns:
+            [times] 4em
+            [gcpr-start] 0.5fr
+            [gcpr-end vmv-start] 0.5fr
+            [vmv-end vcbm-start] 0.5fr
+            [vcbm-end];
+    }
+}
+
+.time-slot {
+    grid-column: times;
+}
+
+.track-slot {
+    display: none;
+}
+
+@supports( display:grid ) {
+    @media screen and (min-width:700px) {
+        .track-slot {
+            display: block;
+            padding: 10px 5px 5px;
+            top: 0;
+            background-color: rgba(255,255,255,.9);
+        }
+    }
+}
+
+/* Small-screen & fallback styles */
+.session {
+    margin-bottom:  1em;
+}
+
+@supports( display:grid ) {
+    @media screen and (min-width: 700px) {
+        .session {
+            margin: 0;
+        }   
+    }
+}
+/* Mobile devices */
+@media only screen and (max-width: 700px) {
+    .time-slot {
+        display: none;
+    } 
+    .session {
+        display: inherit;
+    }
+    .shortSession {
+        display: inline-block;
+    }
+    .weekdayContainer {
+        flex-direction:column !important;;
+    }
+}
+/* Tablets */ 
+@media only screen and (max-width: 800px) {
+    .site-content {
+        max-width: 95%;
+    }
+}
+
+
+.session {
+    padding: .5em;
+    border-radius: 2px;
+    font-size: 14px;
+    box-shadow:
+        rgba(255,255,255,.6) 1px 1px 0,
+        rgba(0,0,0,.3) 2px 2px 0;
+    text-decoration: none;
+    color: #000;
+}
+.shortSession {
+    display: inline !important;;
+}
+
+.session-title,
+.session-time,
+.session-track,
+.session-speaker {
+    display: block;
+}
+
+.session-time,
+.session-track,
+.session-chair {
+    font-size: 0.75em;
+}
+.session-title,
+.time-slot {
+    margin: 0;
+    font-size: 1em;
+}
+
+.track-slot,
+.time-slot {
+    font-weight: bold;
+    font-size:.75em;
+    margin-top: -20px;
+}
+.weekday > h2  {
+    padding-left: 50px;
+}
+
+.gcpr {
+    background-color: #e38282;
+    transition: ease-in-out var(--easeInOutTime);
+}
+.gcpr:hover {
+    background-color: #cf2e2e;
+    transition: ease-in-out var(--easeInOutTime);
+}
+
+.vmv {
+    background-color: #facd6b;
+    transition: ease-in-out var(--easeInOutTime);
+}
+
+.vmv:hover {
+    background-color: #f7b728;
+    transition: ease-in-out var(--easeInOutTime);
+}
+
+.vcbm {
+    background-color: #6ac6fb;
+    transition: ease-in-out var(--easeInOutTime);
+}
+.vcbm:hover {
+    background-color: #0693e3;
+    transition: ease-in-out var(--easeInOutTime);
+}
+
+.joint {
+    background-color: #9eeb7a;
+    transition: ease-in-out var(--easeInOutTime);
+}
+.joint:hover {
+    background-color: #68E02F;
+    transition: ease-in-out var(--easeInOutTime);
+}
+.vmv-vcbm {
+    background-color: #b371f4;
+    transition: ease-in-out var(--easeInOutTime);
+}
+.vmv-vcbm:hover {
+    background-color: #9f44fa;
+    transition: ease-in-out var(--easeInOutTime);
+}
+.break {
+    background-color: #d6d6d6; 
+}
+.track-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ccc;
+    color: #000;
+    box-shadow: none;
+}
+
+.text {
+    max-width: 750px;
+    font-size: 18px;
+    margin: 0 auto 50px;
+}
+
+hr {
+    margin: 40px 0;
+}
+.weekdayContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+}
+.weekday {
+    flex: 1;
+}
+.flexbreak {
+    flex-basis: 100% !important;
+    height: 0;
+}
