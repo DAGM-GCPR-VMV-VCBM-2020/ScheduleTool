@@ -74,3 +74,7 @@ just include the files content into a `<style> ... </style>` tag.
 ## Wordpress
 Wordpress does some intressting stuff to the styling.
 A (not so nice) way to include custom css is to click on the ` customize` button on the upper left side. This works only if you are an admin. Now there is a menue for additional css. Please make shure that you dont replace everything.
+
+## Acknowledgements
+- [gspread](https://github.com/burnash/gspread) is used for reading the Google spreadsheet.
+- Mark Root-Wiley's idea to work with a CSS-Grid: https://css-tricks.com/building-a-conference-schedule-with-css-grid/
