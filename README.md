@@ -1,5 +1,6 @@
 # ScheduleTool
 A simple tool to create a Timetable based on a CSS Grid System. Mobile friendly, easy to extend and free.
+The data is fetched from a Google Spreadsheet to allow multiple users and simple editing.
 ## Example
 <img src="example.png" height=300></img> -----  <img src="example_mobile.png" height=300></img>
 ## Usage 
@@ -33,17 +34,12 @@ See [this URL](https://developers.google.com/sheets/api/quickstart/python) on ho
 - Group every entry by day. The days will be created in order of appearance.
 - Example: `Monday`,  `Tuesday`, `Last Day`
 
-### start_time
+### start_time / end_time
 - int
-- Start time for the session
+- Start/end time for the session
 - 24 hour format without any special chars
 - in 30 minutes steps
 - Example: `0800`, `1230`, `1600`
-
-### end_time
-- int
-- End time for the session
-- as start_time
 
 ### class
 - String
@@ -57,20 +53,16 @@ See [this URL](https://developers.google.com/sheets/api/quickstart/python) on ho
 - See style.css for more information
 - Example: `VCBM`, `joint`, `gcpr-start / vcbm-end`
 
-### chair 
+### chair / speaker
 - String
-- Name of Session-Chair
+- Name of session-Chair / session-speaker
 - See main.py to turn this globally on/off
 
-### speaker 
-- String
-- Name of Session-Speaker
-- See main.py to turn this globally on/off
 ### hidden
 - bool (actually a string: `true` , `false`)
 - Determines if whole session is hidden.
 
-### hidden
+### short
 - bool (actually a string: `true` , `false`)
 - Determines if its a short session. This will add another css class to it.
 - Session will be displayed in one line.
