@@ -1,6 +1,16 @@
 /*************************
- * CSS TimeTable by Jules Kreuer (juleskreuer.eu) 
- * Partly based on Mark Root-Wiley's work (https://css-tricks.com/building-a-conference-schedule-with-css-grid/)
+ * CSS ScheduleTool by Jules Kreuer (juleskreuer.eu) 
+ * Published for the GCPR VMV VCBM Conference 2020
+ * Published under the MIT-Licence: see
+ * The CSS is partly based on Mark Root-Wiley's work (https://css-tricks.com/building-a-conference-schedule-with-css-grid/)
+ *************************/
+
+/*************************
+ * Global constants:
+ *  ~  --rowH: height of each row in the grid
+ *     set --rowH to auto to have a condensed version
+ *     each row has the same height (you may change it below for a inidividual row)
+ *  ~  --easeInOutTime: time for the ease-in-out animation when hovering the session-tile
  *************************/
  :root {
     --rowH: 47px;
@@ -15,9 +25,10 @@
 
 @media screen and (min-width:700px) {
     /**************************
-    * This is the main grid, each row has the same height
-    * set --rowH to auto to have a condensed version
-    ***************************/
+     * This is the main grid.
+     * You may need to add more rows if the program starts prior 8:30 or ends after 18:30
+     * Change the columns names (tracks) at this moment 3 tracks are implemented. 
+     ***************************/
     .schedule {
         display: grid;
         margin-left: -20px;
@@ -151,6 +162,12 @@
     padding-left: 50px;
 }
 
+
+/*************************
+ * Conference classes:
+ * Adapt the conferenc classes to your needs.
+ * These classes corresponds to the 'class' collumn in the Google Spreadsheet
+ *************************/
 .gcpr {
     background-color: #e38282;
     transition: ease-in-out var(--easeInOutTime);
