@@ -1,6 +1,9 @@
 # ScheduleTool
 A simple tool to create a Timetable based on a CSS Grid System. Mobile friendly, easy to extend and free.
 The data is fetched from a Google Spreadsheet to allow multiple users and simple editing.
+
+This Tool was created for the GCPR VCBM VMV Conference 2020 by Jules Kreuer (not-a-feature) and is published under the MIT License. See <a href="LICENSE">LICENCE</a> for more.
+
 ## Example
 <img src="example.png" height=300></img> -----  <img src="example_mobile.png" height=300></img>
 ## Usage 
