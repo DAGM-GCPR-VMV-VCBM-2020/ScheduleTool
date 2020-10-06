@@ -12,7 +12,8 @@ The data is fetched from a Google Spreadsheet to allow multiple users and simple
 - Create a Google Docs API key so this application can access your documents. 
 See [this URL](https://developers.google.com/sheets/api/quickstart/python) on how to create said API key.
 
-- Create a Google Spreadsheet with a table named `timetable`
+- Create a Google Spreadsheet with a sheet named `timetable`:
+    - Take a look at the example excel file, you may copy to drive
 - Fill in the first line:
 
 
@@ -24,6 +25,7 @@ See [this URL](https://developers.google.com/sheets/api/quickstart/python) on ho
 (Refer to the [gspread documentation](https://gspread.readthedocs.io/en/latest/) for further info.)
 
 - Run the whole thing: `python3 main.py`
+- It will create a `schedule.html`file.
 
 ## Explanation
 ### ID
