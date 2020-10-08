@@ -4,6 +4,8 @@ The data is fetched from a Google Spreadsheet to allow multiple users and simple
 
 This Tool was created for the GCPR VCBM VMV Conference 2020 by Jules Kreuer (not-a-feature) and is published under the MIT License. See <a href="LICENSE">LICENCE</a> for more.
 
+For more information on the overall conference organization have a look into the [guideline document](https://github.com/DAGM-GCPR-VMV-VCBM-2020/ScheduleTool/blob/master/conference-media-guide_generic_v01.pdf).
+
 ## Example
 <img src="example.png" height=300></img> -----  <img src="example_mobile.png" height=300></img>
 ## Usage 
